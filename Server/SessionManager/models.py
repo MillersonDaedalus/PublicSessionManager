@@ -9,16 +9,20 @@ class active_sessions(models.Model):
     userBarcode = models.CharField()
     startTime = models.TimeField()
     endTime = models.TimeField()
+    is_locked = models.BooleanField()
 
     def authenticate_barcode(self, barcode):
         pass
 
-class timeout_sessions(models.Model):
+    def adjust_time(self):
+        pass
+
+class users_on_timeout(models.Model):
     userBarcode = models.CharField()
     startTime = models.TimeField()
     endTime = models.TimeField()
 
-class blocked_sessions(models.Model):
+class restricted_sessions(models.Model):
     userBarcode = models.CharField()
     note = models.TextField()
 
