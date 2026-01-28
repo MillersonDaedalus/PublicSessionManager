@@ -6,6 +6,38 @@
     <title>Public Session Manager</title>
 </head>
 <body>
+  <div class="row">
+	<br>
+	<div class="small-8 medium-8 columns">
+		<h1><i class="fa fa-desktop"></i> Public Session Manager</h1>
+	</div>
+	<div class="small-4 medium-4 columns text-right">
+		<div class="button-group"><a class="button" href="settings.php"><i class="fa fa-gears"></i></a><a class="button secondary" href="logout.php"><i class="fa fa-sign-out"></i> Logout</a></div>	</div>
+    <div class="small-12 columns">
+        <div class="expanded button-group stacked-for-small">
+            <a class="button secondary" href="{% url 'sessions' %}"><i class="fa fa-desktop"></i> Active Sessions</a>
+            <a class="button" href="{% url 'restrictions' %}"><i class="fa fa-user-times"></i> Restricted Accounts</a>
+            <a class="button" href="{% url 'locked-systems' %}"><i class="fa fa-lock"></i> Locked Systems</a>
+            <a class="button" href="{% url 'multi-session-cards' %}"><i class="fa fa-users"></i> Multi-Session Cards</a>
+            <a class="button" href="{% url 'break-override' %}"><i class="fa fa-gavel"></i> Break Override</a>
+            <a class="button" href="{% url 'reports' %}"><i class="fa fa-bar-chart"></i> Reports</a>
+        </div>
+    </div>
+    <div class="large-4 columns">
+        <h2 class="subheader">Active Sessions</h2>
+        <p>Listed are the current active sessions.</p>
+    </div>
+    <div class="small-8 columns text-right">
+    	<br>
+        <a class="button" href="{% url 'sessions/send-message' %}"><i class="fa fa-envelope"></i> Send Message</a>
+        <a class="button hide" href="http://192.168.1.167/adminQueue.php?pin=0000"><i class="fa fa-print"></i> Admin Print Queue</a>
+	<a class="button" href="http://192.168.1.11:50001"><i class="fa fa-print"></i> Admin Print Queue</a>
+		<a class="button" href="{% url 'sessions/adjust-funds' %}"><i class="fa fa-money"></i> Adjust Funds</a>
+		<a class="button" href="{% url 'sessions/express-session' %}"><i class="fa fa-bolt"></i> Express Session</a>
+        <a class="button secondary" href="{% url 'reports' %}"><i class="fa fa-refresh"></i> Refresh (<span class="c" id="30">25</span>)</a>
+    </div>
+
+</div>
     {% block content %}
     {% endblock %}
 </body>

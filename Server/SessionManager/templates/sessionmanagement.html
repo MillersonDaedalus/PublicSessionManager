@@ -1,5 +1,38 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block content %}
-
+<div class="small-12 columns">
+	<table width="800px" border="1">
+		<tbody>
+            <tr>
+			    <th><i class="fa fa-desktop"></i> Computer</th>
+			    <th><i class="fa fa-barcode"></i> Barcode</th>
+			    <th><i class="fa fa-clock-o"></i> Start Time</th>
+			    <th><i class="fa fa-clock-o"></i> End Time</th>
+			    <th><i class="fa fa-wrench"></i> Adjust Time</th>
+		    </tr>
+            {% for session in sessions %}
+		    <tr>
+			    <td>{% session.computer %}</td>
+			    <td><span><i class="fa fa-circle-o-notch fa-spin"></i>{% session.userBarcode %}</span></td>
+                <td style="text-align:center;">{% session.startTime %}/td>
+                <td style="text-align:center;">{% session.endTime %}</td>
+                <td style="text-align:right;">
+			        <a class=" secondary" href="lock.php?systemName=Adult-Desktop-A6"><i class="fa fa-lock"></i> Lock</a> | <a class=" secondary" href="messages.php?systemName=Adult-Desktop-A6"><i class="fa fa-envelope"></i> Send Message</a><a class=" secondary hide" href="http://192.168.1.167/adminQueue.php?pin=0000&amp;barcode=21459002210303"><i class="fa fa-print"></i> Print Queue</a>
+                    <div class="button-group expanded">
+                            <a class="button alert" href="adjust.php?session=a48fa9790629a2586e0bde9aeb6ec93b&amp;time=-999999"><i class="fa fa-close"></i></a>
+                            <a class="button warning" href="adjust.php?session=a48fa9790629a2586e0bde9aeb6ec93b&amp;time=-3600">- 60</a>
+                            <a class="button warning" href="adjust.php?session=a48fa9790629a2586e0bde9aeb6ec93b&amp;time=-1800">- 30</a>
+                            <a class="button warning" href="adjust.php?session=a48fa9790629a2586e0bde9aeb6ec93b&amp;time=-900">- 15</a>
+                            <a class="button warning" href="adjust.php?session=a48fa9790629a2586e0bde9aeb6ec93b&amp;time=-300">- 5</a>
+                            <a class="button success" href="adjust.php?session=a48fa9790629a2586e0bde9aeb6ec93b&amp;time=300">+ 5</a>
+                            <a class="button success" href="adjust.php?session=a48fa9790629a2586e0bde9aeb6ec93b&amp;time=900">+ 15</a>
+                            <a class="button success" href="adjust.php?session=a48fa9790629a2586e0bde9aeb6ec93b&amp;time=1800">+ 30</a>
+                            <a class="button success" href="adjust.php?session=a48fa9790629a2586e0bde9aeb6ec93b&amp;time=3600">+ 60</a><br>
+                    </div>
+                </td>
+		    </tr>
+		</tbody>
+    </table>
+</div>
 {% endblock %}

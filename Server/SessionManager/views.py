@@ -2,40 +2,40 @@ from django.shortcuts import render
 
 # Create your views here.
 def login(request):
-    pass
+    return render(request, "login.html")
 
 def sessionmanagement(request):
-    pass
+    return render(request, "sessionmanagement.html")
 
 def restrictedaccounts(request):
-    pass
+    return render(request, "restrictedaccounts.html")
 
 def lockedsystems(request):
-    pass
+    return render(request, "lockedsystems.html")
 
 def multi_sessioncards(request):
-    pass
+    return render(request, "multisessioncards.html")
 
 def breakoverride(request):
-    pass
+    return render(request, "breakoverride.html")
 
 def reports(request):
-    pass
+    return render(request, "reports.html")
 
 def sendmessage(request):
-    pass
+    return render(request, "sendmessage.html")
 
 def printqueue(request):
-    pass
+    return render(request, "printqueue.html")
 
 def adjustfunds(request):
-    pass
+    return render(request, "adjustfunds.html")
 
 def expresssession(request):
-    pass
+    return render(request, "expresssession.html")
 
 def settigns(request):
-    pass
+    return render(request, "settings.html")
 
 def reportlogs(request):
-    pass
+    return render(request, "reportlogs.html")
